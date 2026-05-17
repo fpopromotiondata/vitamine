@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Container from './Container';
+import { BUSINESS } from '@/lib/theme';
 
 const LINKS = [
   { href: '#hero', label: 'Accueil' },
@@ -58,10 +59,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#menu"
-            className="ml-3 inline-flex items-center bg-brand-green hover:bg-brand-green-dark text-white font-semibold px-4 py-2 rounded-full shadow-soft transition"
+            href={`tel:${BUSINESS.phoneIntl}`}
+            className="ml-3 inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold px-4 py-2 rounded-full shadow-soft transition"
           >
-            Voir le menu
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
+              <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.05 15.05 0 01-6.59-6.58l2.2-2.21a1 1 0 00.25-1.02A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1 17 17 0 0017 17 1 1 0 001-1v-3.5a1 1 0 00-1-1z" />
+            </svg>
+            {BUSINESS.phone}
           </a>
         </nav>
 
@@ -108,11 +112,14 @@ export default function Navbar() {
             ))}
             <div className="px-6 py-4">
               <a
-                href="#menu"
+                href={`tel:${BUSINESS.phoneIntl}`}
                 onClick={() => setOpen(false)}
-                className="block text-center bg-brand-green hover:bg-brand-green-dark text-white font-semibold py-3 rounded-full"
+                className="flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold py-3 rounded-full"
               >
-                Voir le menu
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
+                  <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.05 15.05 0 01-6.59-6.58l2.2-2.21a1 1 0 00.25-1.02A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1 17 17 0 0017 17 1 1 0 001-1v-3.5a1 1 0 00-1-1z" />
+                </svg>
+                {BUSINESS.phone}
               </a>
             </div>
           </nav>

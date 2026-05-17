@@ -2,11 +2,11 @@ import type { Review } from '@/lib/reviews-data';
 
 export default function ReviewCard({ review }: { review: Review }) {
   return (
-    <article className="relative shrink-0 w-[300px] sm:w-[360px] bg-white text-brand-ink rounded-2xl p-6 shadow-card flex flex-col">
+    <article className="group relative shrink-0 w-[300px] sm:w-[360px] bg-white text-brand-ink rounded-2xl p-6 shadow-card flex flex-col border-2 border-transparent hover:border-brand-pink/30 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-[0_20px_40px_-12px_rgba(227,54,84,0.35)] transition-all duration-300 ease-out cursor-default">
       {/* Big quote glyph */}
       <svg
         viewBox="0 0 32 32"
-        className="absolute top-4 right-4 w-10 h-10 text-brand-pink-soft"
+        className="absolute top-4 right-4 w-10 h-10 text-brand-pink-soft group-hover:text-brand-pink/40 group-hover:scale-110 transition-all duration-300"
         fill="currentColor"
         aria-hidden="true"
       >

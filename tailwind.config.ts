@@ -40,9 +40,7 @@ const config: Config = {
         'gradient-x': 'gradientX 8s ease infinite',
         'gradient-shift': 'gradientShift 14s ease infinite',
         'shimmer': 'shimmer 3s linear infinite',
-        'blob': 'blob 18s ease-in-out infinite',
-        'blob-slow': 'blob 26s ease-in-out infinite',
-        'wave-slow': 'wave 12s ease-in-out infinite',
+        'wave-slide': 'waveSlide 14s linear infinite',
         'pulse-ring': 'pulseRing 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
         'tilt': 'tilt 8s ease-in-out infinite',
       },
@@ -83,14 +81,9 @@ const config: Config = {
           '0%':   { 'background-position': '-200% 0' },
           '100%': { 'background-position': '200% 0' },
         },
-        blob: {
-          '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%':      { transform: 'translate(40px, -30px) scale(1.1)' },
-          '66%':      { transform: 'translate(-30px, 30px) scale(0.95)' },
-        },
-        wave: {
-          '0%, 100%': { transform: 'translateX(0) skewX(0deg)' },
-          '50%':      { transform: 'translateX(-20px) skewX(-3deg)' },
+        waveSlide: {
+          '0%':   { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
         pulseRing: {
           '0%':   { transform: 'scale(0.7)', opacity: '0.7' },

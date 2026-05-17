@@ -16,22 +16,20 @@ body {
 
 /* ---------- Design helpers (gradients, grain, glow) ---------- */
 
-/* Animated multi-stop pink gradient used on hero / accents */
+/* Smoother gradient layers — wider radials in the same hue family blend into
+   the base color without forming visible "blob" patches. */
 .bg-hero-mesh {
   background:
-    radial-gradient(at 15% 20%, rgba(255, 140, 170, 0.55) 0px, transparent 50%),
-    radial-gradient(at 85% 10%, rgba(255, 90, 130, 0.45) 0px, transparent 55%),
-    radial-gradient(at 75% 80%, rgba(197, 42, 71, 0.55) 0px, transparent 50%),
-    radial-gradient(at 20% 90%, rgba(119, 186, 72, 0.30) 0px, transparent 45%),
+    radial-gradient(120% 90% at 15% 0%,  rgba(255, 120, 150, 0.45), transparent 70%),
+    radial-gradient(120% 90% at 85% 100%, rgba(170, 30, 60, 0.55), transparent 70%),
     linear-gradient(135deg, #e33654 0%, #c52a47 100%);
 }
 
 .bg-green-mesh {
   background:
-    radial-gradient(at 10% 20%, rgba(200, 240, 150, 0.55) 0px, transparent 50%),
-    radial-gradient(at 90% 30%, rgba(94, 154, 55, 0.55) 0px, transparent 55%),
-    radial-gradient(at 80% 90%, rgba(140, 201, 90, 0.55) 0px, transparent 50%),
-    linear-gradient(135deg, #8cc95a 0%, #5e9a37 100%);
+    radial-gradient(120% 90% at 15% 0%,  rgba(170, 220, 110, 0.45), transparent 70%),
+    radial-gradient(120% 90% at 85% 100%, rgba(74, 130, 38, 0.55), transparent 70%),
+    linear-gradient(135deg, #77ba48 0%, #5e9a37 100%);
 }
 
 /* Subtle SVG-noise grain overlay for premium feel */
@@ -74,20 +72,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Glowing blob blurs for parallax decoration layers */
-.blob-pink {
-  background: radial-gradient(circle, rgba(255, 90, 130, 0.55), rgba(255, 90, 130, 0) 70%);
-  filter: blur(60px);
-}
-.blob-green {
-  background: radial-gradient(circle, rgba(140, 201, 90, 0.55), rgba(140, 201, 90, 0) 70%);
-  filter: blur(60px);
-}
-.blob-cream {
-  background: radial-gradient(circle, rgba(255, 248, 244, 0.7), rgba(255, 248, 244, 0) 70%);
-  filter: blur(50px);
 }
 
 /* Soft glow for buttons / focus elements */

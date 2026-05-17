@@ -2,17 +2,28 @@
 
 import Image from 'next/image';
 import Container from './Container';
-import WaveDivider from './WaveDivider';
 import Reveal from './Reveal';
-import { BRAND, BUSINESS } from '@/lib/theme';
+import WaveDivider from './WaveDivider';
+import { BUSINESS } from '@/lib/theme';
 
 export default function Footer() {
   return (
     <footer id="contact" className="relative bg-hero-mesh bg-size-300 animate-gradient-shift text-white grain overflow-hidden">
-      {/* Wave on top, flipped, so footer feels like it rises from the previous section */}
-      <WaveDivider fill={BRAND.pinkDark} variant={4} flip layered animated className="-mt-px relative z-10" />
+      {/* Top wave — sits over the footer's own pink mesh so the wave's bottom
+          edge IS the footer's mesh (one element, one bg → no seam). The SVG
+          paints white above the curve, blending into the white LocationsSection
+          (and body) above. */}
+      <WaveDivider
+        inverted
+        fill="#ffffff"
+        variant={4}
+        layered
+        animated
+        className="absolute inset-x-0 top-0 z-20"
+        id="loc-to-footer"
+      />
 
-      <Container className="relative z-10 pt-10 pb-6">
+      <Container className="relative z-10 pt-16 lg:pt-24 pb-6">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
           <Reveal direction="up">
@@ -85,7 +96,15 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/15 text-center text-base text-white/75">
-          © {new Date().getFullYear()} {BUSINESS.name} {BUSINESS.city} · Tous droits réservés.
+          Site réalisé par{' '}
+          <a
+            href="https://benouarabdou.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white hover:underline underline-offset-4"
+          >
+            Benouar Abdelouaheb
+          </a>
         </div>
       </Container>
     </footer>

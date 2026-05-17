@@ -26,7 +26,9 @@ export const FRUIT_IMG = {
   glass:      `${CDN}/Cup%20with%20straw/3D/cup_with_straw_3d.png`,
   pancake:    `${CDN}/Pancakes/3D/pancakes_3d.png`,
   cocktail:   `${CDN}/Tropical%20drink/3D/tropical_drink_3d.png`,
-  bottle:     `${CDN}/Bottle%20with%20popping%20cork/3D/bottle_with_popping_cork_3d.png`,
+  // Custom juice-bottle illustration — Fluent UI Emoji only ships a champagne
+  // bottle ("Bottle with popping cork"), which is wrong for a juice shop.
+  bottle:     '/icons/juice-bottle.svg',
   saladBowl:  `${CDN}/Green%20salad/3D/green_salad_3d.png`,
   iceCream:   `${CDN}/Ice%20cream/3D/ice_cream_3d.png`,
   honey:      `${CDN}/Honey%20pot/3D/honey_pot_3d.png`,

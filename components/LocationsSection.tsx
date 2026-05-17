@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import Container from './Container';
 import FloatingFruit from './FloatingFruit';
-import AuroraBackground from './AuroraBackground';
 import Reveal from './Reveal';
 import { FRUIT_IMG } from '@/lib/fruit-images';
 
@@ -18,12 +17,10 @@ const LocationMap = dynamic(() => import('./LocationMap'), {
 export default function LocationsSection() {
   return (
     <section id="locations" className="relative bg-white pt-16 lg:pt-20 overflow-hidden">
-      <AuroraBackground variant="white" className="opacity-50" />
-
-      <FloatingFruit src={FRUIT_IMG.cherries}   className="top-10 right-6 w-14 h-14 lg:w-20 lg:h-20"                    anim="animate-float"      delay={0.0} opacity={80} parallax={60} />
-      <FloatingFruit src={FRUIT_IMG.mango}      className="top-1/3 left-4 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block"   anim="animate-drift"      delay={0.5} opacity={70} parallax={50} />
-      <FloatingFruit src={FRUIT_IMG.banana}     className="bottom-10 right-10 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block" anim="animate-drift-rev"  delay={0.8} opacity={70} parallax={40} />
-      <FloatingFruit src={FRUIT_IMG.greenApple} className="bottom-20 left-10 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block"  anim="animate-float-slow" delay={1.1} opacity={70} parallax={70} />
+      <FloatingFruit src={FRUIT_IMG.cherries}   className="top-10 right-6 w-14 h-14 lg:w-20 lg:h-20"                    anim="animate-float"      delay={0.0} opacity={80} />
+      <FloatingFruit src={FRUIT_IMG.mango}      className="top-1/3 left-4 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block"   anim="animate-drift"      delay={0.5} opacity={70} />
+      <FloatingFruit src={FRUIT_IMG.banana}     className="bottom-10 right-10 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block" anim="animate-drift-rev"  delay={0.8} opacity={70} />
+      <FloatingFruit src={FRUIT_IMG.greenApple} className="bottom-20 left-10 w-12 h-12 lg:w-16 lg:h-16 hidden sm:block"  anim="animate-float-slow" delay={1.1} opacity={70} />
 
       <Container className="relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
@@ -43,14 +40,17 @@ export default function LocationsSection() {
             </p>
           </Reveal>
         </div>
-      </Container>
 
-      {/* Full-bleed cinematic map */}
-      <Reveal direction="zoom" delay={0.15} className="relative z-10">
-        <div className="relative w-full h-[420px] sm:h-[520px] lg:h-[600px] border-y border-zinc-200 shadow-card">
-          <LocationMap />
-        </div>
-      </Reveal>
+        {/* Map — bounded to the same Container width as the Menu section
+            content. The wave that transitions into the footer lives INSIDE
+            the footer (as its top decoration) so this section can end cleanly
+            here. */}
+        <Reveal direction="zoom" delay={0.15}>
+          <div className="relative w-full h-[420px] sm:h-[520px] lg:h-[600px] rounded-3xl overflow-hidden ring-1 ring-zinc-200 shadow-card">
+            <LocationMap />
+          </div>
+        </Reveal>
+      </Container>
     </section>
   );
 }

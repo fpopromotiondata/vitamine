@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="cap" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#a8e070"/>
+      <stop offset="100%" stop-color="#5e9a37"/>
+    </linearGradient>
+    <linearGradient id="juice" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#ff8a5b"/>
+      <stop offset="55%" stop-color="#ff5577"/>
+      <stop offset="100%" stop-color="#c52a47"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="label" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff2ea"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="32" cy="60.5" rx="13" ry="2" fill="#000" opacity="0.16"/>
+
+  <!-- bottle body + juice fill -->
+  <path d="M20 27 C20 22 25 21 28 21 L36 21 C39 21 44 22 44 27 L44 55 C44 58.5 42 60 39 60 L25 60 C22 60 20 58.5 20 55 Z"
+        fill="url(#juice)"/>
+
+  <!-- neck (glass, light tint) -->
+  <rect x="27" y="14" width="10" height="8" rx="1" fill="#fde6c8"/>
+  <rect x="27" y="14" width="2.5" height="8" fill="#ffeed6"/>
+
+  <!-- collar ring under cap -->
+  <rect x="25.5" y="13" width="13" height="2" rx="0.6" fill="#3e6924"/>
+
+  <!-- cap -->
+  <rect x="25" y="4" width="14" height="9.5" rx="1.6" fill="url(#cap)"/>
+  <rect x="26.5" y="5.5" width="1.5" height="6.5" rx="0.6" fill="#c8eea1" opacity="0.85"/>
+
+  <!-- glass highlight + shadow -->
+  <path d="M20 27 C20 22 25 21 28 21 L36 21 C39 21 44 22 44 27 L44 55 C44 58.5 42 60 39 60 L25 60 C22 60 20 58.5 20 55 Z"
+        fill="url(#glass)"/>
+
+  <!-- label -->
+  <rect x="22" y="33" width="20" height="18" rx="1.5" fill="url(#label)"/>
+  <rect x="22" y="33" width="20" height="2.4" fill="#e33654"/>
+  <rect x="22" y="48.6" width="20" height="2.4" fill="#e33654"/>
+
+  <!-- little orange + leaf on label -->
+  <circle cx="32" cy="40.5" r="3.6" fill="#ff7a47"/>
+  <circle cx="30.7" cy="39.4" r="0.9" fill="#ffb188" opacity="0.85"/>
+  <path d="M32 37 L30.6 35.6 L32 35.2 L33.4 35.6 Z" fill="#5e9a37"/>
+
+  <!-- "JUS" wordmark -->
+  <text x="32" y="47.4" font-family="Poppins, system-ui, -apple-system, Segoe UI, sans-serif"
+        font-size="4.4" font-weight="900" letter-spacing="0.6"
+        fill="#e33654" text-anchor="middle">JUS</text>
+</svg>

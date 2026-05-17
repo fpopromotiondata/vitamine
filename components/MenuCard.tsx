@@ -32,25 +32,25 @@ export default function MenuCard({ category }: Props) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX: rotX, rotateY: rotY, transformPerspective: 1000 }}
-      className="group relative bg-white rounded-2xl border-2 border-brand-pink-soft hover:border-brand-pink transition-colors duration-300 hover:shadow-card overflow-hidden will-change-transform"
+      className="group relative bg-white rounded-2xl border-2 border-brand-pink-soft hover:border-brand-pink/40 transition-colors duration-300 hover:shadow-card overflow-hidden will-change-transform"
     >
-      {/* Mouse-tracked spotlight */}
+      {/* Mouse-tracked spotlight — subtle */}
       <motion.div
         aria-hidden
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
           background: useTransform(
             [glowX, glowY],
-            ([x, y]) => `radial-gradient(420px circle at ${x} ${y}, rgba(227,54,84,0.14), transparent 60%)`,
+            ([x, y]) => `radial-gradient(360px circle at ${x} ${y}, rgba(227,54,84,0.05), transparent 60%)`,
           ),
         }}
       />
 
       {/* corner accent */}
-      <div className="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-brand-pink-soft/60 group-hover:bg-brand-pink/15 group-hover:scale-125 transition-all duration-500" />
+      <div className="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-brand-pink-soft/50 group-hover:bg-brand-pink-soft/80 group-hover:scale-110 transition-all duration-500" />
 
       <header className="relative flex items-center gap-3 px-5 pt-5 pb-3 border-b-2 border-dashed border-brand-pink-soft">
-        <span className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-pink-soft to-white group-hover:from-brand-pink/20 group-hover:to-brand-pink-soft transition-colors duration-500 shadow-sm">
+        <span className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-pink-soft to-white group-hover:from-brand-pink-soft group-hover:to-brand-pink-soft/60 transition-colors duration-500 shadow-sm">
           <Image src={iconFor(category)} alt="" width={32} height={32} unoptimized className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
         </span>
         <h3 className="font-display font-extrabold text-brand-pink text-lg leading-tight group-hover:text-brand-pink-dark transition">
@@ -62,7 +62,7 @@ export default function MenuCard({ category }: Props) {
         {category.items.map(item => (
           <li
             key={item.name}
-            className="flex items-center justify-between gap-3 py-1.5 border-b border-dotted border-zinc-100 last:border-0 hover:bg-brand-pink-soft/30 -mx-2 px-2 rounded-md transition-colors"
+            className="flex items-center justify-between gap-3 py-1.5 border-b border-dotted border-zinc-100 last:border-0 hover:bg-brand-pink-soft/25 -mx-2 px-2 rounded-md transition-colors"
           >
             <span className="text-sm text-zinc-700">{item.name}</span>
             <span className="shrink-0 inline-flex items-center bg-gradient-to-r from-brand-green to-brand-green-dark text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">

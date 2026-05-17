@@ -1,8 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 
 type Props = {
   src: string;
@@ -17,9 +13,6 @@ type Props = {
   delay?: number;
   /** opacity 0-100 */
   opacity?: number;
-  /** Parallax intensity in px. Positive = element drifts up as user scrolls down.
-   *  Pass 0 to disable parallax. Default: 40. */
-  parallax?: number;
 };
 
 export default function FloatingFruit({
@@ -30,20 +23,11 @@ export default function FloatingFruit({
   anim = 'animate-float',
   delay = 0,
   opacity = 100,
-  parallax = 40,
 }: Props) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [parallax, -parallax]);
-
   return (
-    <motion.span
-      ref={ref}
-      style={{ opacity: opacity / 100, y: parallax ? y : 0 }}
+    <span
       className={`group absolute select-none cursor-pointer transition-transform duration-300 hover:scale-125 hover:-translate-y-1 ${className}`}
+      style={{ opacity: opacity / 100 }}
     >
       <Image
         src={src}
@@ -54,6 +38,6 @@ export default function FloatingFruit({
         className={`block w-full h-full drop-shadow-lg ${anim} group-hover:drop-shadow-[0_10px_24px_rgba(0,0,0,0.25)]`}
         style={{ animationDelay: `${delay}s` }}
       />
-    </motion.span>
+    </span>
   );
 }
