@@ -65,13 +65,37 @@ export default function MenuCard({ category }: Props) {
             className="flex items-center justify-between gap-3 py-1.5 border-b border-dotted border-zinc-100 last:border-0 hover:bg-brand-pink-soft/25 -mx-2 px-2 rounded-md transition-colors"
           >
             <span className="text-sm text-zinc-700">{item.name}</span>
-            <span className="shrink-0 inline-flex items-center bg-gradient-to-r from-brand-green to-brand-green-dark text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
-              {item.price}
-              <span className="ml-1 font-medium opacity-90 text-[10px]">DA</span>
-            </span>
+            {item.price !== undefined && (
+              <span className="shrink-0 inline-flex items-center bg-gradient-to-r from-brand-green to-brand-green-dark text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
+                {item.price}
+                <span className="ml-1 font-medium opacity-90 text-[10px]">DA</span>
+              </span>
+            )}
           </li>
         ))}
       </ul>
+
+      {category.supplements && (
+        <div className="relative mx-5 mb-5 mt-1 rounded-xl bg-brand-pink-soft/40 ring-1 ring-brand-pink/15 px-4 py-3">
+          <h4 className="font-display font-extrabold text-brand-pink text-xs uppercase tracking-wide mb-2">
+            {category.supplements.title}
+          </h4>
+          <ul className="space-y-0.5">
+            {category.supplements.items.map(item => (
+              <li
+                key={item.name}
+                className="flex items-center justify-between gap-3 py-1"
+              >
+                <span className="text-sm text-zinc-700">{item.name}</span>
+                <span className="shrink-0 inline-flex items-center bg-white text-brand-pink-dark text-xs font-bold px-2 py-1 rounded-md ring-1 ring-brand-pink/20">
+                  +{item.price}
+                  <span className="ml-1 font-medium opacity-80 text-[10px]">DA</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </motion.article>
   );
 }

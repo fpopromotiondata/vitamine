@@ -35,15 +35,12 @@ function InvalidateSize() {
 }
 
 export default function LocationMap() {
-  const center: [number, number] = [
-    (LOCATIONS[0].lat + LOCATIONS[1].lat) / 2,
-    (LOCATIONS[0].lng + LOCATIONS[1].lng) / 2,
-  ];
+  const center: [number, number] = [LOCATIONS[0].lat, LOCATIONS[0].lng];
 
   return (
     <MapContainer
       center={center}
-      zoom={14}
+      zoom={16}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%' }}
       className="z-0"
@@ -66,11 +63,11 @@ export default function LocationMap() {
         maxZoom={20}
       />
 
-      {LOCATIONS.map((loc, i) => (
+      {LOCATIONS.map(loc => (
         <Marker key={loc.id} position={[loc.lat, loc.lng]} icon={dotPin}>
           <Popup className="vitamine-popup">
             <div className="vp-pop">
-              <div className="vp-pop-num">Vitamine {i + 1}</div>
+              <div className="vp-pop-num">Vitamine</div>
               <div className="vp-pop-row">
                 <a href={loc.mapsUrl} target="_blank" rel="noopener noreferrer" className="vp-pop-cta">
                   Itinéraire →

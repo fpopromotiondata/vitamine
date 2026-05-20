@@ -18,7 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Vitamine Oran — Jus frais, Crêpes, Gaufres, Milkshakes',
   description:
-    'Vitamine Oran : jus frais pressés, crêpes, gaufres, cocktails de fruits, salades de fruits, milkshakes et bouteilles de jus. Deux adresses à Oran.',
+    'Vitamine Oran : jus frais pressés, crêpes, gaufres, cocktails de fruits, salades de fruits, milkshakes et bouteilles 1L. À Oran.',
   icons: { icon: '/vitamine-logo.png' },
 };
 

@@ -32,7 +32,7 @@ export default function MenuSection() {
 
           <Reveal direction="up" delay={0.1}>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-brand-ink mt-3">
-              Plus de 60 créations{' '}
+              Plus de {Math.floor(totalMenuItems / 10) * 10} créations{' '}
               <span className="text-gradient-pink inline-block">fruitées</span>
             </h2>
           </Reveal>

@@ -106,7 +106,7 @@ export default function Hero() {
               className="mt-5 text-base sm:text-lg text-white/90 max-w-xl"
             >
               Jus pressés, crêpes, gaufres, cocktails et salades de fruits,
-              milkshakes et bouteilles — préparés chaque jour avec des fruits choisis.
+              milkshakes et bouteilles 1L — préparés chaque jour avec des fruits choisis.
             </motion.p>
 
             <motion.div

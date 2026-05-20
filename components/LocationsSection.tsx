@@ -26,17 +26,17 @@ export default function LocationsSection() {
         <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
           <Reveal direction="up">
             <span className="inline-block bg-gradient-to-r from-brand-green-soft to-white text-brand-green-dark font-semibold text-sm px-4 py-1.5 rounded-full ring-1 ring-brand-green/20 shadow-sm">
-              📍 Nos adresses
+              📍 Notre adresse
             </span>
           </Reveal>
           <Reveal direction="up" delay={0.1}>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-brand-ink mt-3">
-              Deux <span className="text-gradient-green">Vitamine</span> à Oran
+              <span className="text-gradient-green">Vitamine</span> à Oran
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.2}>
             <p className="mt-3 text-zinc-600">
-              Venez nous voir dans l&apos;une de nos deux boutiques.
+              Venez nous voir dans notre boutique.
             </p>
           </Reveal>
         </div>
